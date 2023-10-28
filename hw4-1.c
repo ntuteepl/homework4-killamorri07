@@ -1,24 +1,12 @@
 #include <stdio.h>
 
-void bubbleSort(int arr[], int n) {
-    int temp;
-    for (int i = 0; i < n - 1; i++) {
-        for (int j = 0; j < n - i - 1; j++) {
-            if (arr[j] > arr[j + 1]) {
-                temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
-            }
-        }
-    }
-}
 
 int isPrime(int num) {
     if (num <= 1) {
         return 0; // 0 and 1 are not prime numbers
     }
     else {
-        for (int i = 2; i * i <= num; i++) {
+        for (int i = 2; (i * i) <= num; i++) {
             if (num % i == 0) {
                 return 0; // num is divisible by i, so it's not prime
             }
@@ -42,8 +30,7 @@ int main() {
         scanf("%d", &myArray[i]);
     }
 
-    // Sort the array using bubbleSort
-    bubbleSort(myArray, n);
+
 
     // CHECKING PRIME NUMBER
     for (int i = 0; i < n; i++) {
