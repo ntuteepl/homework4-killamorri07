@@ -7,27 +7,37 @@ int main() {
     
     int n;
     
-//    printf("Enter a number (1 to 6) to print elements: ");
+    printf("Enter a number for login tries: ");
     scanf("%d", &n);
     
-    if (n >= 1 && n <= 6) {
-        for (int i = 0; i < n; i++) {
-            printf("%d ", myID[i]);
+    int tries = 0;
+    
+    while (tries < n) {
+        int id, pw;
+        
+        scanf("%d", &id);
+        
+        scanf("%d", &pw);
+        
+        int i;
+        for (i = 0; i < 6; i++) {
+            if (myID[i] == id && myPW[i] == pw) {
+                printf("%d\n", Price[i]);
+                tries++;
+                break;
+            }
         }
         
-        printf("\n");
-        for (int i = 0; i < n; i++) {
-            printf(" %d",myPW[i]);
+        if (i == 6) {
+            printf("Error\n");
+            tries++;
         }
-        
-        printf("\n");
-        for (int i = 0; i < n; i++) {
-            printf("%d ",Price[i]);
-        }
-    } else {
-        printf("Error.\n");
     }
     
+    if (tries >= n) {
+        return 0;
+    }
+
     return 0;
 }
 
