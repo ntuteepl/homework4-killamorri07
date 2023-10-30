@@ -7,7 +7,7 @@ int main() {
     
     int n;
     
-    //printf("Enter a number for login tries: ");
+    printf("Enter a number for login tries: ");
     scanf("%d", &n);
     
     int tries = 0;
@@ -29,7 +29,7 @@ int main() {
         }
         
         if (i == 6) {
-            printf("Error\n");
+            printf("error\n");
             tries++;
         }
     }
