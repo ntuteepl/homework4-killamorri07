@@ -7,7 +7,7 @@ int main() {
     
     int n;
     
-    printf("Enter a number for login tries: ");
+    //printf("Enter a number for login tries: ");
     scanf("%d", &n);
     
     int tries = 0;
@@ -40,4 +40,3 @@ int main() {
 
     return 0;
 }
-
