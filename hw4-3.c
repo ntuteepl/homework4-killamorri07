@@ -138,4 +138,17 @@ int main() {
     for (int i = 0; i < p; i++) {
         printf("Driver %d Schedule: ", i + 1);
         for (int j = 0; j < scheduleSizes[i]; j++) {
-            printf("(%d, %d) ", s_array[j],
+            printf("(%d, %d) ", s_array[j], driverSchedules[i][j]);
+        }
+        printf("\n");
+    }
+
+    // Free allocated memory
+    for (int i = 0; i < p; i++) {
+        free(driverSchedules[i]);
+    }
+    free(driverSchedules);
+    free(scheduleSizes);
+
+    return 0;
+}
